@@ -9,7 +9,7 @@ import { NextRequest, NextResponse } from "next/server";
 //     apiKey: process.env.OPENAI_API_KEY,
 // });
 
-const genAI = new GoogleGenerativeAI("AIzaSyAF_83amtzSn3mN4VmwOGCPczGdiIhMAkA");
+const genAI = new GoogleGenerativeAI(process.env.GENAI_API_KEY!);
 
 export async function POST(req: NextRequest) {
     const {chat_session_id, chatbot_id, content, name, created_at} = await req.json();
